@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		414FFAEB61414F5BA7533931 /* Pods_OneDrivePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3325E1316FF0FCB4741D7FD0 /* Pods_OneDrivePicker.framework */; };
+		D529E4BC1FB0C5CD0047091A /* ODPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4BB1FB0C5CD0047091A /* ODPicker.swift */; };
+		D529E4C01FB0C9870047091A /* ODPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */; };
+		D529E4C21FB0CE690047091A /* ODPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D529E4C11FB0CE690047091A /* ODPicker.storyboard */; };
+		D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4C31FB0DCC80047091A /* ODPickerCell.swift */; };
+		D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */; };
+		D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982C11FB0C3DA006EADC2 /* ViewController.swift */; };
+		D5C982C51FB0C3DA006EADC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C31FB0C3DA006EADC2 /* Main.storyboard */; };
+		D5C982C71FB0C3DA006EADC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C61FB0C3DA006EADC2 /* Assets.xcassets */; };
+		D5C982CA1FB0C3DA006EADC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C81FB0C3DA006EADC2 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3325E1316FF0FCB4741D7FD0 /* Pods_OneDrivePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneDrivePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8A6D0D4340342440BC1E2E2 /* Pods-OneDrivePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneDrivePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker.release.xcconfig"; sourceTree = "<group>"; };
+		AB8C6A98C1DF1FE8142DC74C /* Pods-OneDrivePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneDrivePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker.debug.xcconfig"; sourceTree = "<group>"; };
+		D529E4BA1FB0C5100047091A /* OneDrivePicker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneDrivePicker.entitlements; sourceTree = "<group>"; };
+		D529E4BB1FB0C5CD0047091A /* ODPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPicker.swift; sourceTree = "<group>"; };
+		D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerViewController.swift; sourceTree = "<group>"; };
+		D529E4C11FB0CE690047091A /* ODPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ODPicker.storyboard; sourceTree = "<group>"; };
+		D529E4C31FB0DCC80047091A /* ODPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerCell.swift; sourceTree = "<group>"; };
+		D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDrivePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D5C982C11FB0C3DA006EADC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D5C982C41FB0C3DA006EADC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D5C982C61FB0C3DA006EADC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D5C982C91FB0C3DA006EADC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D5C982CB1FB0C3DA006EADC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5C982B91FB0C3DA006EADC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				414FFAEB61414F5BA7533931 /* Pods_OneDrivePicker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72F71EE4B24036EF5AEDF3D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3325E1316FF0FCB4741D7FD0 /* Pods_OneDrivePicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5C982B31FB0C3DA006EADC2 = {
+			isa = PBXGroup;
+			children = (
+				D5C982BE1FB0C3DA006EADC2 /* OneDrivePicker */,
+				D5C982BD1FB0C3DA006EADC2 /* Products */,
+				F825CF9ABB6EC7F38AA70345 /* Pods */,
+				72F71EE4B24036EF5AEDF3D1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D5C982BD1FB0C3DA006EADC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5C982BE1FB0C3DA006EADC2 /* OneDrivePicker */ = {
+			isa = PBXGroup;
+			children = (
+				D529E4BA1FB0C5100047091A /* OneDrivePicker.entitlements */,
+				D5C982D11FB0C3FC006EADC2 /* ODPicker */,
+				D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */,
+				D5C982C11FB0C3DA006EADC2 /* ViewController.swift */,
+				D5C982C31FB0C3DA006EADC2 /* Main.storyboard */,
+				D5C982C61FB0C3DA006EADC2 /* Assets.xcassets */,
+				D5C982C81FB0C3DA006EADC2 /* LaunchScreen.storyboard */,
+				D5C982CB1FB0C3DA006EADC2 /* Info.plist */,
+			);
+			path = OneDrivePicker;
+			sourceTree = "<group>";
+		};
+		D5C982D11FB0C3FC006EADC2 /* ODPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D529E4BB1FB0C5CD0047091A /* ODPicker.swift */,
+				D529E4C11FB0CE690047091A /* ODPicker.storyboard */,
+				D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */,
+				D529E4C31FB0DCC80047091A /* ODPickerCell.swift */,
+			);
+			path = ODPicker;
+			sourceTree = "<group>";
+		};
+		F825CF9ABB6EC7F38AA70345 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB8C6A98C1DF1FE8142DC74C /* Pods-OneDrivePicker.debug.xcconfig */,
+				A8A6D0D4340342440BC1E2E2 /* Pods-OneDrivePicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5C982BB1FB0C3DA006EADC2 /* OneDrivePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C982CE1FB0C3DA006EADC2 /* Build configuration list for PBXNativeTarget "OneDrivePicker" */;
+			buildPhases = (
+				3F62607CD36EFAF457B1AB15 /* [CP] Check Pods Manifest.lock */,
+				D5C982B81FB0C3DA006EADC2 /* Sources */,
+				D5C982B91FB0C3DA006EADC2 /* Frameworks */,
+				D5C982BA1FB0C3DA006EADC2 /* Resources */,
+				0DFCEFD371A4ACD07512D38F /* [CP] Embed Pods Frameworks */,
+				79AEBC308AADF6C9D2164952 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneDrivePicker;
+			productName = OneDrivePicker;
+			productReference = D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5C982B41FB0C3DA006EADC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Narlei A Moreira";
+				TargetAttributes = {
+					D5C982BB1FB0C3DA006EADC2 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = D5C982B71FB0C3DA006EADC2 /* Build configuration list for PBXProject "OneDrivePicker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5C982B31FB0C3DA006EADC2;
+			productRefGroup = D5C982BD1FB0C3DA006EADC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5C982BB1FB0C3DA006EADC2 /* OneDrivePicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5C982BA1FB0C3DA006EADC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5C982CA1FB0C3DA006EADC2 /* LaunchScreen.storyboard in Resources */,
+				D5C982C71FB0C3DA006EADC2 /* Assets.xcassets in Resources */,
+				D5C982C51FB0C3DA006EADC2 /* Main.storyboard in Resources */,
+				D529E4C21FB0CE690047091A /* ODPicker.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DFCEFD371A4ACD07512D38F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADAL/ADAL.framework",
+				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
+				"${BUILT_PRODUCTS_DIR}/OneDriveSDK/OneDriveSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneDriveSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F62607CD36EFAF457B1AB15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneDrivePicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79AEBC308AADF6C9D2164952 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5C982B81FB0C3DA006EADC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D529E4BC1FB0C5CD0047091A /* ODPicker.swift in Sources */,
+				D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */,
+				D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */,
+				D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */,
+				D529E4C01FB0C9870047091A /* ODPickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D5C982C31FB0C3DA006EADC2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5C982C41FB0C3DA006EADC2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D5C982C81FB0C3DA006EADC2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5C982C91FB0C3DA006EADC2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5C982CC1FB0C3DA006EADC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D5C982CD1FB0C3DA006EADC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5C982CF1FB0C3DA006EADC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8C6A98C1DF1FE8142DC74C /* Pods-OneDrivePicker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneDrivePicker/OneDrivePicker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = OneDrivePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5C982D01FB0C3DA006EADC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8A6D0D4340342440BC1E2E2 /* Pods-OneDrivePicker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OneDrivePicker/OneDrivePicker.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HQKT5G7NHC;
+				INFOPLIST_FILE = OneDrivePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5C982B71FB0C3DA006EADC2 /* Build configuration list for PBXProject "OneDrivePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C982CC1FB0C3DA006EADC2 /* Debug */,
+				D5C982CD1FB0C3DA006EADC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C982CE1FB0C3DA006EADC2 /* Build configuration list for PBXNativeTarget "OneDrivePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5C982CF1FB0C3DA006EADC2 /* Debug */,
+				D5C982D01FB0C3DA006EADC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5C982B41FB0C3DA006EADC2 /* Project object */;
+}
