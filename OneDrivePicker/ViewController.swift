@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.odPicker = ODPicker(applicationId: "KEY_HERE")
+        let key = ""
+        self.odPicker = ODPicker(applicationId: key)
     }
     
     
