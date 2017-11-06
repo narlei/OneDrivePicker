@@ -33,6 +33,8 @@ open class ODPicker {
     /// Object of OneDriveSDK
     var odClient:ODClient!
     
+    /// Files Selected
+    var selectedFiles:[ODItem]? = [ODItem]()
     
     // Mark: Constructor
     init(applicationId:String!) {

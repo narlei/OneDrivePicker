@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let key = ""
+        let key = "1ba6e306-1a77-452d-a556-bb9e8fb143a8"
         self.odPicker = ODPicker(applicationId: key)
     }
     

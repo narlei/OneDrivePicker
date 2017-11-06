@@ -29,6 +29,10 @@ class ODPickerViewController: UIViewController {
         
     }
     
+    @IBAction func actionButtonClose(_ sender: Any) {
+        self.odPicker.selectedFiles = [ODItem]()
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     // MARK: Constructors

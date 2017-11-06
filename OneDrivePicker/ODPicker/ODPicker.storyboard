@@ -47,6 +47,11 @@
                         <viewLayoutGuide key="safeArea" id="9er-ds-qtM"/>
                     </view>
                     <navigationItem key="navigationItem" title="OneDrive" id="acJ-Xz-7LY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="fV4-ql-1hb">
+                            <connections>
+                                <action selector="actionButtonClose:" destination="q1V-5W-Fup" id="FgO-Mw-hhY"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="hrZ-M9-88r">
                             <connections>
                                 <action selector="actionButtonDone:" destination="q1V-5W-Fup" id="VLP-93-Z09"/>
