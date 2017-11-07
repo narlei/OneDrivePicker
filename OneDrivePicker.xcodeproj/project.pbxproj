@@ -12,6 +12,7 @@
 		D529E4C01FB0C9870047091A /* ODPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */; };
 		D529E4C21FB0CE690047091A /* ODPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D529E4C11FB0CE690047091A /* ODPicker.storyboard */; };
 		D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4C31FB0DCC80047091A /* ODPickerCell.swift */; };
+		D52AE5581FB1E87D0042C780 /* ODItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */; };
 		D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */; };
 		D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982C11FB0C3DA006EADC2 /* ViewController.swift */; };
 		D5C982C51FB0C3DA006EADC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C31FB0C3DA006EADC2 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerViewController.swift; sourceTree = "<group>"; };
 		D529E4C11FB0CE690047091A /* ODPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ODPicker.storyboard; sourceTree = "<group>"; };
 		D529E4C31FB0DCC80047091A /* ODPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerCell.swift; sourceTree = "<group>"; };
+		D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODItemExtension.swift; sourceTree = "<group>"; };
 		D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDrivePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5C982C11FB0C3DA006EADC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D529E4BB1FB0C5CD0047091A /* ODPicker.swift */,
+				D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */,
 				D529E4C11FB0CE690047091A /* ODPicker.storyboard */,
 				D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */,
 				D529E4C31FB0DCC80047091A /* ODPickerCell.swift */,
@@ -196,13 +199,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ADAL/ADAL.framework",
 				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
+				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/OneDriveSDK/OneDriveSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAL.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneDriveSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -253,6 +260,7 @@
 				D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */,
 				D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */,
 				D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */,
+				D52AE5581FB1E87D0042C780 /* ODItemExtension.swift in Sources */,
 				D529E4C01FB0C9870047091A /* ODPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

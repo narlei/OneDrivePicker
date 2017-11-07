@@ -8,9 +8,15 @@
 
 import UIKit
 import OneDriveSDK
+import DateToolsSwift
+
 
 class ODPickerCell: UITableViewCell {
     
+    // MARK: Outlet
+    @IBOutlet weak var imageViewIcon: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelDetail: UILabel!
     
     // MARK: Properties
     var item:ODItem!
@@ -18,7 +24,10 @@ class ODPickerCell: UITableViewCell {
     
     func initialize(item:ODItem) {
         self.item = item
-        self.textLabel?.text = item.name
+        self.labelName.text = item.name
+        self.labelDetail.text = item.createdDateTime.format(with: "dd/MM/yyyy")
+        item.printImage(to: self.imageViewIcon)
+        
     }
 
     override func awakeFromNib() {

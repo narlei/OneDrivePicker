@@ -29,7 +29,7 @@ class ODPickerViewController: UIViewController {
         
     }
     
-    @IBAction func actionButtonClose(_ sender: Any) {
+    @objc func actionButtonClose() {
         self.odPicker.selectedFiles = [ODItem]()
         self.dismiss(animated: true, completion: nil)
     }
@@ -61,6 +61,11 @@ class ODPickerViewController: UIViewController {
         }else{
            self.loadData()
         }
+        
+        if self.navigationController?.viewControllers.count == 1 {
+            let buttonClose = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(self.actionButtonClose))
+            self.navigationItem.leftBarButtonItem = buttonClose
+        }
    
     }
     
@@ -71,6 +76,7 @@ class ODPickerViewController: UIViewController {
         }
         
         if let request = self.odPicker.odClient.drive().items(itemId).children().request() {
+            request.expand("thumbnails")
             self.loadItems(request: request)
         }
     }
@@ -104,6 +110,7 @@ class ODPickerViewController: UIViewController {
 extension ODPickerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.arrayItems.object(at: indexPath.row) as! ODItem
+        print(item.file?.mimeType ?? "")
         let navigationController = UIStoryboard(name: "ODPicker", bundle: nil).instantiateInitialViewController() as! UINavigationController
         let viewController = navigationController.viewControllers.first as! ODPickerViewController
         viewController.initialize(odPicker: self.odPicker, currentItem: item)
