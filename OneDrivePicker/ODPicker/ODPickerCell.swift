@@ -22,7 +22,6 @@ class ODPickerCell: UITableViewCell {
     // MARK: Properties
     var item:ODItem!
     
-    
     func initialize(item:ODItem) {
         self.item = item
         self.labelName.text = item.name
