@@ -17,6 +17,7 @@ class ODPickerCell: UITableViewCell {
     @IBOutlet weak var imageViewIcon: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelDetail: UILabel!
+    @IBOutlet weak var labelCount: UILabel!
     
     // MARK: Properties
     var item:ODItem!
@@ -25,10 +26,30 @@ class ODPickerCell: UITableViewCell {
     func initialize(item:ODItem) {
         self.item = item
         self.labelName.text = item.name
-        self.labelDetail.text = item.createdDateTime.format(with: "dd/MM/yyyy")
+        
+        
+        let fileSizeWithUnit = ByteCountFormatter.string(fromByteCount: item.size, countStyle: .file)
+        let date = item.createdDateTime.format(with: "dd/MM/yyyy")
+        self.labelDetail.text = "\(date)・\(fileSizeWithUnit)"
+        
+        
+        self.labelCount.isHidden = true
+        if let count = item.folder?.childCount {
+            self.labelCount.text = "\(count)"
+            self.labelCount.isHidden = false
+        }
+        
+        
         item.printImage(to: self.imageViewIcon)
         
+        
+        if item.folder != nil {
+            self.accessoryType = .disclosureIndicator
+        }else{
+            self.accessoryType = .none
+        }
     }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

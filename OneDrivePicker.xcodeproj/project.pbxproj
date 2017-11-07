@@ -13,6 +13,7 @@
 		D529E4C21FB0CE690047091A /* ODPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D529E4C11FB0CE690047091A /* ODPicker.storyboard */; };
 		D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D529E4C31FB0DCC80047091A /* ODPickerCell.swift */; };
 		D52AE5581FB1E87D0042C780 /* ODItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */; };
+		D54841D81FB2174D00C47038 /* ODPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54841D71FB2174D00C47038 /* ODPickerItem.swift */; };
 		D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */; };
 		D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982C11FB0C3DA006EADC2 /* ViewController.swift */; };
 		D5C982C51FB0C3DA006EADC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C31FB0C3DA006EADC2 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		D529E4C11FB0CE690047091A /* ODPicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ODPicker.storyboard; sourceTree = "<group>"; };
 		D529E4C31FB0DCC80047091A /* ODPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerCell.swift; sourceTree = "<group>"; };
 		D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODItemExtension.swift; sourceTree = "<group>"; };
+		D54841D71FB2174D00C47038 /* ODPickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerItem.swift; sourceTree = "<group>"; };
 		D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDrivePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5C982C11FB0C3DA006EADC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				D529E4C11FB0CE690047091A /* ODPicker.storyboard */,
 				D529E4BF1FB0C9870047091A /* ODPickerViewController.swift */,
 				D529E4C31FB0DCC80047091A /* ODPickerCell.swift */,
+				D54841D71FB2174D00C47038 /* ODPickerItem.swift */,
 			);
 			path = ODPicker;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D529E4BC1FB0C5CD0047091A /* ODPicker.swift in Sources */,
+				D54841D81FB2174D00C47038 /* ODPickerItem.swift in Sources */,
 				D529E4C41FB0DCC80047091A /* ODPickerCell.swift in Sources */,
 				D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */,
 				D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */,
@@ -403,6 +407,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQKT5G7NHC;
 				INFOPLIST_FILE = OneDrivePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HQKT5G7NHC;
 				INFOPLIST_FILE = OneDrivePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";

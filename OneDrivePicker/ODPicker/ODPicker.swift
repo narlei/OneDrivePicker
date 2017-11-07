@@ -14,7 +14,7 @@ import OneDriveSDK
 ///
 
 protocol ODPickerDelegate {
-    func onClose(selectedFiles:[Any])
+    func onClose(selectedFiles:[ODPickerItem])
 }
 
 open class ODPicker {
@@ -34,7 +34,10 @@ open class ODPicker {
     var odClient:ODClient!
     
     /// Files Selected
-    var selectedFiles:[ODItem]? = [ODItem]()
+    var selectedFiles:[ODItem] = [ODItem]()
+    
+    /// Items shared
+    var sharedFiles:[ODPickerItem] = [ODPickerItem]()
     
     // Mark: Constructor
     init(applicationId:String!) {
@@ -68,6 +71,57 @@ open class ODPicker {
         
         return navigationController
     }
+    
+    func addSelected(item:ODItem) {
+        self.selectedFiles.append(item)
+    }
+    
+    func removeSelected(item:ODItem) {
+        let index = self.selectedFiles.index(where: { (listItem) -> Bool in
+            return listItem.id == item.id
+        })
+        
+        if index != nil {
+            self.selectedFiles.remove(at: index!)
+        }
+    }
+    
+    func isSelected(item:ODItem) -> Bool {
+        
+        let index = self.selectedFiles.index(where: { (listItem) -> Bool in
+            return listItem.id == item.id
+        })
+        
+        if index != nil {
+            return true
+        }
+        return false
+    }
+    
+    func makeItemsShared(onComplete:@escaping (_ finish:Bool) -> Void) {
+        if let nextItem = self.selectedFiles.first {
+            self.makeShared(item: nextItem,onComplete: onComplete)
+        }else {
+            self.delegate.onClose(selectedFiles: self.sharedFiles)
+        }
+    }
+    
+    private func makeShared(item:ODItem, onComplete:@escaping (_ finish:Bool) -> Void){
+        self.odClient.drive().items(item.id).createLink(withType: "edit").request().execute { (response, error) in
+            if let url = response?.link.webUrl {
+            let pickerItem = ODPickerItem(odItem: item, link: url)
+                self.sharedFiles.append(pickerItem)
+                self.removeSelected(item: item)
+                if let nextItem = self.selectedFiles.first {
+                    self.makeShared(item: nextItem, onComplete: onComplete)
+                }else {
+                    onComplete(true)
+                    self.delegate.onClose(selectedFiles: self.sharedFiles)
+                }
+            }
+        }
+    }
+    
     
     
 }

@@ -15,7 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let key = "1ba6e306-1a77-452d-a556-bb9e8fb143a8"
+        
         self.odPicker = ODPicker(applicationId: key)
+        self.odPicker.delegate = self
+
     }
     
     
@@ -25,7 +28,6 @@ class ViewController: UIViewController {
         let viewController = self.odPicker.viewController()
         
         self.present(viewController, animated: true) {
-            
         }
     }
 
@@ -38,8 +40,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ODPickerDelegate {
-    func onClose(selectedFiles: [Any]) {
-        
+    func onClose(selectedFiles: [ODPickerItem]) {
+        print(selectedFiles)
     }
     
     

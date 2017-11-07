@@ -26,6 +26,11 @@ class ODPickerViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func actionButtonDone(_ sender: Any) {
+        self.odPicker.makeItemsShared { (finished) in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
         
     }
     
@@ -109,8 +114,24 @@ class ODPickerViewController: UIViewController {
 
 extension ODPickerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let item = self.arrayItems.object(at: indexPath.row) as! ODItem
-        print(item.file?.mimeType ?? "")
+        if let cell = tableView.cellForRow(at: indexPath) {
+            // File
+            if item.folder == nil {
+                if self.odPicker.isSelected(item: item) {
+                    cell.accessoryType =  .none
+                    self.odPicker.removeSelected(item: item)
+                }else{
+                    cell.accessoryType = .checkmark
+                    self.odPicker.addSelected(item: item)
+                }
+                return
+            }
+        }
+        // Folder
         let navigationController = UIStoryboard(name: "ODPicker", bundle: nil).instantiateInitialViewController() as! UINavigationController
         let viewController = navigationController.viewControllers.first as! ODPickerViewController
         viewController.initialize(odPicker: self.odPicker, currentItem: item)
@@ -131,6 +152,11 @@ extension ODPickerViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ODPickerCell", for: indexPath) as! ODPickerCell
         let item = self.arrayItems.object(at: indexPath.row) as! ODItem
         cell.initialize(item: item)
+        
+        if self.odPicker.isSelected(item: item) {
+            cell.accessoryType =  .checkmark
+        }
+        
         return cell
     }
     
