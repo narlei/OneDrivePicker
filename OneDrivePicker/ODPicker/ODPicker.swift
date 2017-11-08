@@ -48,8 +48,7 @@ open class ODPicker {
     
     /// Set all values to OneDriveSDK
     private func initialize() {
-        ODClient.setMicrosoftAccountAppId(self.applicationId, scopes: self.scopes)
-        
+        ODClient.setMicrosoftAccountAppId(self.applicationId, scopes: self.scopes)        
     }
     
     /// Return if object was correctly configured

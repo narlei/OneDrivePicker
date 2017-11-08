@@ -12,7 +12,7 @@ Clone project and run `pod install`
 * Use de pods in Podfile
 
 
-## Use
+## Usage
 
 Create the object
 
