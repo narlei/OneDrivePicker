@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import OneDriveSDK
+import MSGraphSDK
 
 ///
 /// Read: https://github.com/OneDrive/onedrive-sdk-ios
@@ -22,19 +22,21 @@ open class ODPicker {
     // MARK: Properties
     
     /// The app ID created in https://dev.onedrive.com/app-registration.htm
-    private var applicationId:String!
+    public var applicationId:String!
     
     /// The scodes required to access and share files https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes
-    public var scopes = ["onedrive.readwrite"]
+    public var scopes = "Files.ReadWrite"
     
     /// Class delegate to access files selecteds
     var delegate:ODPickerDelegate! = nil
     
-    /// Object of OneDriveSDK
-    var odClient:ODClient!
+    lazy var odClient: MSGraphClient = {
+        let client = MSGraphClient.defaultClient()
+        return client!
+    }()
     
     /// Files Selected
-    var selectedFiles:[ODItem] = [ODItem]()
+    var selectedFiles:[MSGraphDriveItem] = [MSGraphDriveItem]()
     
     /// Items shared
     var sharedFiles:[ODPickerItem] = [ODPickerItem]()
@@ -48,12 +50,12 @@ open class ODPicker {
     
     /// Set all values to OneDriveSDK
     private func initialize() {
-        ODClient.setMicrosoftAccountAppId(self.applicationId, scopes: self.scopes)        
+        
     }
     
     /// Return if object was correctly configured
     func isValid() -> Bool {
-        if self.odClient != nil {
+        if NXOAuth2AuthenticationProvider.sharedAuth().clientId != nil {
             return true
         }
         
@@ -71,13 +73,13 @@ open class ODPicker {
         return navigationController
     }
     
-    func addSelected(item:ODItem) {
+    func addSelected(item:MSGraphDriveItem) {
         self.selectedFiles.append(item)
     }
     
-    func removeSelected(item:ODItem) {
+    func removeSelected(item:MSGraphDriveItem) {
         let index = self.selectedFiles.index(where: { (listItem) -> Bool in
-            return listItem.id == item.id
+            return listItem.entityId == item.entityId
         })
         
         if index != nil {
@@ -85,10 +87,10 @@ open class ODPicker {
         }
     }
     
-    func isSelected(item:ODItem) -> Bool {
+    func isSelected(item:MSGraphDriveItem) -> Bool {
         
         let index = self.selectedFiles.index(where: { (listItem) -> Bool in
-            return listItem.id == item.id
+            return listItem.entityId == item.entityId
         })
         
         if index != nil {
@@ -105,10 +107,10 @@ open class ODPicker {
         }
     }
     
-    private func makeShared(item:ODItem, onComplete:@escaping (_ finish:Bool) -> Void){
-        self.odClient.drive().items(item.id).createLink(withType: "edit").request().execute { (response, error) in
+    private func makeShared(item:MSGraphDriveItem, onComplete:@escaping (_ finish:Bool) -> Void){
+        self.odClient.drive().items(item.entityId).createLink(withType: "edit", scope: self.scopes).request().execute { (response, error) in
             if let url = response?.link.webUrl {
-            let pickerItem = ODPickerItem(odItem: item, link: url)
+            let pickerItem = ODPickerItem(MSGraphDriveItem: item, link: url)
                 self.sharedFiles.append(pickerItem)
                 self.removeSelected(item: item)
                 if let nextItem = self.selectedFiles.first {
@@ -120,9 +122,6 @@ open class ODPicker {
             }
         }
     }
-    
-    
-    
 }
 
 

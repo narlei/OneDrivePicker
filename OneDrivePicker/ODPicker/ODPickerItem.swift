@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import OneDriveSDK
+import MSGraphSDK
 
 struct ODPickerItem {
-    var odItem:ODItem!
+    var MSGraphDriveItem:MSGraphDriveItem!
     var link:String!
 }

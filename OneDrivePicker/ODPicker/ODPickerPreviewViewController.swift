@@ -8,14 +8,14 @@
 
 import UIKit
 import WebKit
-import OneDriveSDK
+import MSGraphSDK
 
 
 var myContext = 0
 
 class ODPickerPreviewViewController: UIViewController {
 
-    var item:ODItem!
+    var item:MSGraphDriveItem!
     var progressView: UIProgressView!
     var webView: WKWebView!
 
@@ -78,7 +78,7 @@ class ODPickerPreviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    class func create(item:ODItem) -> UIViewController? {
+    class func create(item:MSGraphDriveItem) -> UIViewController? {
         if item.webUrl != nil {
             let viewController = UIStoryboard(name: "ODPickerPreview", bundle: nil).instantiateInitialViewController() as! ODPickerPreviewViewController
             viewController.item = item

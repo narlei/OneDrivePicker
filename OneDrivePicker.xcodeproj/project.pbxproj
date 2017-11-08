@@ -16,6 +16,7 @@
 		D54841D81FB2174D00C47038 /* ODPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54841D71FB2174D00C47038 /* ODPickerItem.swift */; };
 		D54841DA1FB2242C00C47038 /* ODPickerPreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54841D91FB2242C00C47038 /* ODPickerPreview.storyboard */; };
 		D54841DC1FB2244300C47038 /* ODPickerPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54841DB1FB2244300C47038 /* ODPickerPreviewViewController.swift */; };
+		D54841DE1FB3239F00C47038 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54841DD1FB3239E00C47038 /* Authentication.swift */; };
 		D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */; };
 		D5C982C21FB0C3DA006EADC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C982C11FB0C3DA006EADC2 /* ViewController.swift */; };
 		D5C982C51FB0C3DA006EADC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5C982C31FB0C3DA006EADC2 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 		D54841D71FB2174D00C47038 /* ODPickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerItem.swift; sourceTree = "<group>"; };
 		D54841D91FB2242C00C47038 /* ODPickerPreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ODPickerPreview.storyboard; sourceTree = "<group>"; };
 		D54841DB1FB2244300C47038 /* ODPickerPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODPickerPreviewViewController.swift; sourceTree = "<group>"; };
+		D54841DD1FB3239E00C47038 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		D59DFB741FB325EF007450F7 /* BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgeHeader.h; sourceTree = "<group>"; };
 		D5C982BC1FB0C3DA006EADC2 /* OneDrivePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDrivePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C982BF1FB0C3DA006EADC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5C982C11FB0C3DA006EADC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 		D5C982D11FB0C3FC006EADC2 /* ODPicker */ = {
 			isa = PBXGroup;
 			children = (
+				D59DFB741FB325EF007450F7 /* BridgeHeader.h */,
+				D54841DD1FB3239E00C47038 /* Authentication.swift */,
 				D529E4BB1FB0C5CD0047091A /* ODPicker.swift */,
 				D52AE5571FB1E87D0042C780 /* ODItemExtension.swift */,
 				D529E4C11FB0CE690047091A /* ODPicker.storyboard */,
@@ -207,18 +212,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-OneDrivePicker/Pods-OneDrivePicker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ADAL/ADAL.framework",
-				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/OneDriveSDK/OneDriveSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/MSGraphSDK/MSGraphSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/MSGraphSDK-NXOAuth2Adapter/MSGraphSDK_NXOAuth2Adapter.framework",
+				"${BUILT_PRODUCTS_DIR}/NXOAuth2Client/NXOAuth2Client.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAL.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneDriveSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSGraphSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MSGraphSDK_NXOAuth2Adapter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NXOAuth2Client.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +279,7 @@
 				D5C982C01FB0C3DA006EADC2 /* AppDelegate.swift in Sources */,
 				D52AE5581FB1E87D0042C780 /* ODItemExtension.swift in Sources */,
 				D529E4C01FB0C9870047091A /* ODPickerViewController.swift in Sources */,
+				D54841DE1FB3239F00C47038 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +425,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = OneDrivePicker/ODPicker/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nam.OneDrivePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = OneDrivePicker/ODPicker/BridgeHeader.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import OneDriveSDK
+import MSGraphSDK
 
 
 class ODPickerViewController: UIViewController {
@@ -19,9 +19,10 @@ class ODPickerViewController: UIViewController {
     
     // MARK: Properties
     var odPicker:ODPicker!
-    var currentItem:ODItem!
+    var currentItem:MSGraphDriveItem!
     var arrayItems:NSMutableArray = NSMutableArray()
     var searchBar:UISearchBar!
+    let authentication: Authentication = Authentication()
     
     // MARK: Actions
     
@@ -35,14 +36,14 @@ class ODPickerViewController: UIViewController {
     }
     
     @objc func actionButtonClose() {
-        self.odPicker.selectedFiles = [ODItem]()
+        self.odPicker.selectedFiles = [MSGraphDriveItem]()
         self.dismiss(animated: true, completion: nil)
     }
     
     
     // MARK: Constructors
     
-    func initialize(odPicker:ODPicker, currentItem:ODItem?) {
+    func initialize(odPicker:ODPicker, currentItem:MSGraphDriveItem?) {
         self.odPicker = odPicker
         if currentItem != nil {
             self.currentItem = currentItem
@@ -65,14 +66,9 @@ class ODPickerViewController: UIViewController {
         self.tableView.tableHeaderView = self.searchBar
         
         if !self.odPicker.isValid() {
-            ODClient.client { (odClient, error) in
-                if let client = odClient {
-                    self.odPicker.odClient = client
-                    self.loadData()
-                }else{
-                    // Error
-                }
-            }
+            self.authentication.connectToGraph(withClientId: self.odPicker.applicationId, scopes: [self.odPicker.scopes], completion: { (error) in
+                
+            })
         }else{
             self.loadData()
         }
@@ -108,7 +104,7 @@ class ODPickerViewController: UIViewController {
     
     func loadData(){
         var itemId = "root"
-        if let id = self.currentItem?.id {
+        if let id = self.currentItem?.entityId {
             itemId = id
         }
         if let request = self.odPicker.odClient.drive().items(itemId).children().request() {
@@ -119,7 +115,7 @@ class ODPickerViewController: UIViewController {
     
     func searchData(term:String) {
         var itemId = "root"
-        if let id = self.currentItem?.id {
+        if let id = self.currentItem?.entityId {
             itemId = id
         }
         self.arrayItems = NSMutableArray()
@@ -128,7 +124,7 @@ class ODPickerViewController: UIViewController {
         }
     }
     
-    func loadSearchItems(request:ODItemSearchRequest) {
+    func loadSearchItems(request:MSGraphDriveItemSearchRequest) {
         request.execute(completion: { (collection, nextRequest, error) in
             if let collectionReturn = collection, let items = collectionReturn.value as NSArray?{
                 self.reloadItems(array: items)
@@ -139,7 +135,7 @@ class ODPickerViewController: UIViewController {
         })
     }
     
-    func loadItems(request:ODChildrenCollectionRequest) {
+    func loadItems(request:MSGraphDriveItemChildrenCollectionRequest) {
         request.getWithCompletion { (collection, nextRequest, error) in
             if let collectionReturn = collection, let items = collectionReturn.value as NSArray?{
                 self.reloadItems(array: items)
@@ -170,7 +166,7 @@ extension ODPickerViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item = self.arrayItems.object(at: indexPath.row) as! ODItem
+        let item = self.arrayItems.object(at: indexPath.row) as! MSGraphDriveItem
         if let cell = tableView.cellForRow(at: indexPath) {
             // File
             if item.folder == nil {
@@ -204,7 +200,7 @@ extension ODPickerViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ODPickerCell", for: indexPath) as! ODPickerCell
-        let item = self.arrayItems.object(at: indexPath.row) as! ODItem
+        let item = self.arrayItems.object(at: indexPath.row) as! MSGraphDriveItem
         cell.initialize(item: item)
         
         if self.odPicker.isSelected(item: item) {
@@ -240,7 +236,7 @@ extension ODPickerViewController: UIViewControllerPreviewingDelegate {
     // MARK: 3D Touch
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         if let indexPath = self.tableView.indexPathForRow(at: location) {
-            let item = self.arrayItems.object(at: indexPath.row) as! ODItem
+            let item = self.arrayItems.object(at: indexPath.row) as! MSGraphDriveItem
             let viewController = ODPickerPreviewViewController.create(item: item)
             previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
             return viewController

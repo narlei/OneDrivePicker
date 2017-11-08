@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import OneDriveSDK
+import MSGraphSDK
 import DateToolsSwift
 
 
@@ -20,9 +20,9 @@ class ODPickerCell: UITableViewCell {
     @IBOutlet weak var labelCount: UILabel!
     
     // MARK: Properties
-    var item:ODItem!
+    var item:MSGraphDriveItem!
     
-    func initialize(item:ODItem) {
+    func initialize(item:MSGraphDriveItem) {
         self.item = item
         self.labelName.text = item.name
         

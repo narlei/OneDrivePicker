@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import OneDriveSDK
+import MSGraphSDK
 import SDWebImage
 
 
-extension ODItem {
+extension MSGraphDriveItem {
     
     func printImage(to imageView:UIImageView){
         
@@ -20,7 +20,7 @@ extension ODItem {
             return
         }
         
-        if let thumb = self.thumbnails(0) {
+        if let thumb = self.thumbnails.first as? MSGraphThumbnailSet {
             if let url = URL(string:thumb.small.url) {
                 imageView.sd_setImage(with: url)
             }else{
